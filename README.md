@@ -19,3 +19,40 @@ make proto
 # development
 make server
 ```
+
+## Test
+
+### Register User
+
+```bash
+curl -X POST \
+  http://localhost:8080/v1/auth/register \
+  -H 'Content-Type: application/json' \
+  -d '{
+  "email": "mitch@murphy.com",
+  "password": "password"
+}'
+```
+
+This should return a `201` status code.
+
+### Login User
+
+```bash
+curl -X POST \
+  http://localhost:8080/v1/auth/login \
+  -H 'Content-Type: application/json' \
+  -d '{
+  "email": "mitch@murphy.com",
+  "password": "password"
+}'
+```
+
+This should return a payload with: 
+
+```json
+{
+  "status": 200,
+  "token": "eyj..."
+}
+```
