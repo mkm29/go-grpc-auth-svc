@@ -4,9 +4,9 @@ import (
 	"context"
 	"net/http"
 
+	pb "github.com/mkm29/go-grpc-auth-svc/gen/proto/go"
 	"github.com/mkm29/go-grpc-auth-svc/pkg/db"
 	"github.com/mkm29/go-grpc-auth-svc/pkg/models"
-	"github.com/mkm29/go-grpc-auth-svc/pkg/pb"
 	"github.com/mkm29/go-grpc-auth-svc/pkg/utils"
 )
 

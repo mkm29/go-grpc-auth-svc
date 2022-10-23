@@ -5,9 +5,9 @@ import (
 	"log"
 	"net"
 
+	pb "github.com/mkm29/go-grpc-auth-svc/gen/proto/go"
 	"github.com/mkm29/go-grpc-auth-svc/pkg/config"
 	"github.com/mkm29/go-grpc-auth-svc/pkg/db"
-	"github.com/mkm29/go-grpc-auth-svc/pkg/pb"
 	"github.com/mkm29/go-grpc-auth-svc/pkg/services"
 	"github.com/mkm29/go-grpc-auth-svc/pkg/utils"
 	"google.golang.org/grpc"
