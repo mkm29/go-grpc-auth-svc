@@ -17,10 +17,12 @@ ARG DB_USERNAME
 ARG DB_PASSWORD
 COPY --from=builder /app /auth-svc/
 COPY --from=builder /go/src/github.com/mkm29/auth-svc/pkg/config/envs/ /auth-svc/
+ADD https://raw.githubusercontent.com/vishnubob/wait-for-it/master/wait-for-it.sh /
 ENV DB_HOST=$DB_HOST \
   DB_PORT=$DB_PORT \
   DB_USERNAME=$DB_USERNAME \
   DB_PASSWORD=$DB_PASSWORD \
   DB_DATABASE=$DB_DATABASE
 EXPOSE 50051
-ENTRYPOINT ["/auth-svc/app"]
+# ENTRYPOINT ["/auth-svc/app"]
+CMD ["./wait-for-it.sh", "db:5432", "--" , "./order-svc/app"]
